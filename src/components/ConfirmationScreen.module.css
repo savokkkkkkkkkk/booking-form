@@ -1,0 +1,82 @@
+.container {
+  margin: 0 auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;   
+  padding: 20px;
+  border: 2px solid #C8963E;
+  border-radius: 15px;
+  color: #1A1A1A;
+  background: #FAFAF8;
+  width: 100%;               
+}
+
+.container p,
+.container h2 {
+  margin: 0;
+}
+
+.button {
+  width: 100%;
+  padding: 10px;
+  background: #C8963E;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button:hover:not(:disabled) {
+  background: #b08030;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* === Адаптив для экранов ≤ 480px === */
+@media (max-width: 575px) {
+  .container {
+    padding: 16px;
+    max-width: 100%;
+    border-radius: 0;
+    border: 0;
+  }
+
+  .container h2 {
+    font-size: 20px;
+  }
+
+  .container p {
+    font-size: 15px;
+  }
+
+  .button {
+    padding: 14px 12px;   
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    padding: 12px;
+  }
+
+  .container h2 {
+    font-size: 18px;
+  }
+
+  .container p {
+    font-size: 14px;
+  }
+
+  .button {
+    padding: 12px 10px;
+  }
+}

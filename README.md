@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Бронирование столика — тестовое задание SAVEUR
+
+Проект представляет собой страницу онлайн-бронирования столика в ресторане: форма с валидацией, имитация отправки и экран подтверждения.
+
+🔗 **Деплой:** 
+📦 **Репозиторий:** https://github.com/savokkkkkkkkkk/booking-form
+
+---
+
+## 🛠️ Технологии
+
+- **React 18** (функциональные компоненты, хуки)
+- **Next.js 14** (Pages Router)
+- **TypeScript** (базовая типизация)
+- **CSS Modules** (локальные стили, адаптив)
+- **ESLint** (кодстайл)
+
+---
+
+## 🚀 Запуск проекта локально
+
+1. Клонируй репозиторий:
+   ```bash
+   git clone <ссылка на репозиторий>
+   cd saveur-booking
+   ```
+
+2. Установи зависимости:
+   ```bash
+   npm install
+   ```
+
+3. Запусти режим разработки:
+   ```bash
+   npm run dev
+   ```
+
+4. Открой [http://localhost:3000](http://localhost:3000) в браузере.
+
+---
+
+## 📁 Структура проекта
+
+```
+src/
+├── components/
+│   ├── BookingForm.tsx          # форма бронирования
+│   ├── BookingForm.module.css   # стили формы
+│   ├── ConfirmationScreen.tsx   # экран подтверждения
+│   └── ConfirmationScreen.module.css
+├── pages/
+│   ├── _app.tsx                 # для подключения глобальных стилей
+│   └── index.tsx                # главная страница (состояние и логика)
+├── styles/
+│   └── globals.css              # глобальные стили (сбросы, фон)
+├── types/
+│   └── booking.ts               # интерфейсы и типы
+└── utils/
+    └── validation.ts            # функции валидации полей
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔍 Принятые решения
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **CSS Modules** локальная изоляция, простая поддержка и переиспользование.
+- **Валидация при отправке + onBlur** — пользователь видит ошибки сразу после ввода, но основная проверка происходит перед отправкой.
+- **Состояние формы хранится в родителе (`pages/index.tsx`)** — это упрощает передачу данных на экран подтверждения и сброс формы.
+- **Адаптив с контрольными точками 575px и 375px** — форма корректно отображается на мобильных устройствах, поля увеличены для комфортного касания.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🧪 Что можно улучшить при наличии времени
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Добавить **анимацию перехода** между формой и экраном подтверждения (например, fade).
+- Написать **unit-тесты** для функций валидации (Jest/Vitest).
+- Реализовать **маску ввода** для телефона (автоматическая подстановка +7 или скобок).
+- Добавить **сохранение состояния формы** в localStorage, чтобы при обновлении страницы данные не терялись.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📝 Примечания
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Все стили переведены в **px** для предсказуемости на всех устройствах.
+- Имитация отправки выполнена через `setTimeout` (1.5 секунды) — реалистичная задержка без реального бэкенда.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
