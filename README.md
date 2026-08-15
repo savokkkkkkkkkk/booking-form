@@ -23,7 +23,7 @@
 
 1. Клонируй репозиторий:
    ```bash
-   git clone <ссылка на репозиторий>
+   git clone https://github.com/savokkkkkkkkkk/booking-form
    cd saveur-booking
    ```
 
