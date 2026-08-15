@@ -24,7 +24,7 @@
 1. Клонируй репозиторий:
    ```bash
    git clone https://github.com/savokkkkkkkkkk/booking-form
-   cd saveur-booking
+   cd booking-form
    ```
 
 2. Установи зависимости:
